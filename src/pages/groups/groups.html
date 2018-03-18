@@ -1,0 +1,37 @@
+<!--
+  Generated template for the GroupsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons right>
+      <button ion-button icon-only  (click)="showPrompt()"><ion-icon name="add"></ion-icon></button>
+
+    </ion-buttons>
+     
+    <ion-title>groups
+        
+    </ion-title>
+    
+    
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let g of groups" [navPush]="ChatP" [navParams]="{key:g.$key,username:username,gname:g.$value}">{{g.$value}}
+        <button ion-button clear icon-only item-right>
+            <ion-icon name="arrow-round-forward" ios="ios-arrow-round-forward" md="md-arrow-round-forward"></ion-icon>
+        </button>
+    </ion-item>
+
+  </ion-list>
+  <!-- <ion-input type="text" [(ngModel)]="gname"></ion-input> -->
+  <!-- <button ion-button block outline (click)="onNewGroup()">ADD NEW GROUP</button> -->
+
+</ion-content>

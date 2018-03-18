@@ -1,0 +1,97 @@
+<!--
+  Generated template for the ChatPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<!-- <ion-header>
+
+  <ion-navbar>
+    <ion-title>chat</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div id="chatMessages">
+    <div class="message" *ngFor="let message of messages" >
+      <div  [class]="message.username==username ?'innerMessage messageRight':'innerMessage messageLeft'">
+      <div class="username">{{message.username}}</div>
+      <div class="message">{{message.message}}</div>
+      </div>
+
+    </div>
+
+  </div>
+
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <div id="footer">
+    <div class="elem"><ion-input type="text" [(ngModel)]="message"></ion-input></div>
+    <div class="elem"><button ion-button icon-only (click)="sendMessage()"><ion-icon name="send"></ion-icon></button>
+    </div>
+    </div>
+  </ion-toolbar>
+</ion-footer>
+ -->
+
+
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>{{gname}}</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+    <div class="message-wrap">
+
+        <div *ngFor="let msg of messages"
+             class="message"
+             [class.left]=" msg.name != username "
+             [class.right]=" msg.name === username ">
+            <!-- <img class="user-img" [src]="msg.userAvatar" alt="" src=""> -->
+            <!-- <ion-spinner name="dots" *ngIf="msg.status === 'pending'"></ion-spinner> -->
+            <div class="msg-detail">
+                <div class="msg-info">
+                    <h5>
+                        {{msg.name}}&nbsp;&nbsp;&nbsp;</h5>
+                </div>
+                <div class="msg-content">
+                    <span class="triangle"></span>
+                    <p class="line-breaker ">{{msg.message}}</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</ion-content>
+
+<ion-footer no-border [style.height]="showEmojiPicker ? '255px' : '55px'">
+    <ion-grid class="input-wrap">
+        <ion-row>
+            <ion-col col-1>
+                
+            </ion-col>
+            <ion-col col-9>
+                <ion-textarea #chat_input
+                              placeholder="Type a Message"
+                              [(ngModel)]="message"
+                              (keyup.enter)="check()"
+                              >
+                </ion-textarea>
+            </ion-col>
+            <ion-col col-2>
+                <button ion-button clear icon-only item-right (click)="check()">
+                    <ion-icon name="ios-send" ios="ios-send" md="md-send"></ion-icon>
+                </button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <!-- <emoji-picker *ngIf="showEmojiPicker" [(ngModel)]="editorMsg"></emoji-picker> -->
+</ion-footer>
