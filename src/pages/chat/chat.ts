@@ -7,15 +7,6 @@ import { ActionSheetController } from 'ionic-angular/components/action-sheet/act
 import { LoadingController } from 'ionic-angular/components/loading/loading-controller';
 
 
-
-/**
- * Generated class for the ChatPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
-@IonicPage()
 @Component({
   selector: 'page-chat',
   templateUrl: 'chat.html',

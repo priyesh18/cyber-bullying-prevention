@@ -6,7 +6,6 @@ import { AlertController } from 'ionic-angular/components/alert/alert-controller
 import { LoadingController } from 'ionic-angular/components/loading/loading-controller';
 
 
-@IonicPage()
 @Component({
   selector: 'page-groups',
   templateUrl: 'groups.html',
