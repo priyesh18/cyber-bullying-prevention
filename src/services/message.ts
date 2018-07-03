@@ -1,9 +1,10 @@
-import { NavController, NavParams } from 'ionic-angular';
 import { AngularFireDatabase } from 'angularfire2/database';
 import {Injectable} from '@angular/core';
 import {ApiAiClient} from 'api-ai-javascript';
+import { environment } from '../environment';
 @Injectable()
 export class MessageService{
+    token= environment.token;
     constructor(public db:AngularFireDatabase){
 
     }
@@ -22,7 +23,6 @@ export class MessageService{
     getMessages(groupId){
         return this.db.list('/messages/'+groupId);
     }
-    token="f347e6e97d844432a8eee47e3330fbe8";
     client=new ApiAiClient({accessToken:this.token})
     talk(ques:string){
         return this.client.textRequest(ques);

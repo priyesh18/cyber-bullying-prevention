@@ -63,7 +63,7 @@ public loadingCtrl:LoadingController) {
     console.log('ionViewDidLoad ChatPage');
   }
   check(){
-    this.msgService.talk(this.message).then(res=>{
+    this.msgService.talk(this.message).then((res:any)=>{
       //console.log(res);
       let val = res.result.metadata.intentName;
       if(val === 'offensive'||val === 'sexual'||val === 'body shaming'||val ==='racist'){
